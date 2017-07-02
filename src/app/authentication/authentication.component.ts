@@ -1,7 +1,17 @@
 import { Component } from '@angular/core';
+import {AuthenticateService} from "../shared/services/authenticate/authenticate.service";
 
 @Component({
     selector: 'authentication',
-    templateUrl: './authentication.component.html'
+    templateUrl: './authentication.component.html',
+    providers: [
+        AuthenticateService
+    ]
 })
-export class AuthenticationComponent { }
+export class AuthenticationComponent {
+    state = 'login';
+
+    goTo(state: string) {
+        this.state = state
+    }
+}

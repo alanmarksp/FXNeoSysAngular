@@ -1,0 +1,50 @@
+html, body, my-app, authentication {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.form-center {
+    margin: 2em auto;
+    width: 400px;
+}
+
+@media screen and (max-width: 480px) {
+    .form-center {
+        width: 80%;
+    }
+}
+
+.text-center{
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.aligner-item {
+    max-width: 50%;
+}
+
+.row {
+    margin: 1em;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}

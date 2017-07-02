@@ -1,0 +1,29 @@
+<div class="aligner">
+    <md-card class="form-center text-center">
+        <md-card-title>
+            Register
+        </md-card-title>
+        <div class="row">
+            <md-input-container class="full-width">
+                <input #username mdInput placeholder="Username">
+            </md-input-container>
+        </div>
+        <div class="row">
+            <md-input-container class="full-width">
+                <input #password mdInput placeholder="Password" type="password">
+            </md-input-container>
+        </div>
+        <div class="row">
+            <md-input-container class="full-width">
+                <input #passwordConfirmation mdInput placeholder="Check Password" type="password">
+            </md-input-container>
+        </div>
+        <div class="row">
+            <button md-raised-button class="mat-accent"
+                    (click)="register(username.value, password.value, passwordConfirmation.value)">
+                Register
+            </button>
+        </div>
+        <div class="row">Already a member? <a class="clickable" (click)="goToLogin()">Login</a></div>
+    </md-card>
+</div>
