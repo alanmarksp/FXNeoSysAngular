@@ -9,9 +9,4 @@ import {AuthenticateService} from "../shared/services/authenticate/authenticate.
     ]
 })
 export class AuthenticationComponent {
-    state = 'login';
-
-    goTo(state: string) {
-        this.state = state
-    }
 }

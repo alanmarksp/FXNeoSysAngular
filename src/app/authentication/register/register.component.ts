@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from "@angular/core";
+import {Component} from "@angular/core";
 import {AuthenticateService} from "../../shared/services/authenticate/authenticate.service";
 import {Authentication} from "../../shared/models/authentication.model";
 import {Router} from "@angular/router";
@@ -8,8 +8,6 @@ import {Router} from "@angular/router";
     templateUrl: './register.component.html'
 })
 export class RegisterComponent {
-    @Output() goTo = new EventEmitter();
-
     constructor(private authenticateService: AuthenticateService,
                 private router: Router) {
     }
@@ -23,9 +21,5 @@ export class RegisterComponent {
 
     registerSuccess() {
         this.router.navigate(['/']);
-    }
-
-    goToLogin() {
-        this.goTo.emit("login");
     }
 }

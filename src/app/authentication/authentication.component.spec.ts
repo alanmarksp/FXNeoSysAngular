@@ -4,6 +4,7 @@ import {AuthenticationComponent} from "./authentication.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {MyMaterialModule} from "../material.module";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('Authentication', () => {
     beforeEach(() => {
@@ -14,6 +15,7 @@ describe('Authentication', () => {
                 RegisterComponent
             ],
             imports: [
+                RouterTestingModule,
                 MyMaterialModule
             ]
         });

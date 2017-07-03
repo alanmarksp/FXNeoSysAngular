@@ -16,6 +16,6 @@
         <div class="row">
             <button md-raised-button class="mat-accent" (click)="login(username.value, password.value)">Login</button>
         </div>
-        <div class="row">Not a member? <a class="clickable" (click)="goToRegister()">Register</a></div>
+        <div class="row">Not a member? <a [routerLink]="['../register']">Register</a></div>
     </md-card>
 </div>
