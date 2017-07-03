@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
     selector: 'trading-account-summary',
     templateUrl: './trading-account-summary.component.html'
 })
-export class TradingAccountSummaryComponent { }
+export class TradingAccountSummaryComponent {
+}

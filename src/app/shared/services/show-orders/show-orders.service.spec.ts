@@ -1,4 +1,4 @@
-import { ShowOrdersService } from './show-orders.service';
+import {ShowOrdersService} from "./show-orders.service";
 
 describe('ShowOrdersService', () => {
 

@@ -1,4 +1,4 @@
-import { AuthenticateService } from './authenticate.service';
+import {AuthenticateService} from "./authenticate.service";
 
 describe('AuthenticateService', () => {
 

@@ -1,4 +1,4 @@
-import { SelectTradingAccountService } from './select-trading-account.service';
+import {SelectTradingAccountService} from "./select-trading-account.service";
 
 describe('SelectTradingAccountService', () => {
 

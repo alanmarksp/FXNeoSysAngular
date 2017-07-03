@@ -1,4 +1,4 @@
-import { ShowQuotesService } from './show-quotes.service';
+import {ShowQuotesService} from "./show-quotes.service";
 
 describe('ShowQuotesService', () => {
 

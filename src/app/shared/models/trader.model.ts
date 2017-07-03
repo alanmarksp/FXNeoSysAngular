@@ -1,3 +1,2 @@
-
-
-export class Trader { }
+export class Trader {
+}

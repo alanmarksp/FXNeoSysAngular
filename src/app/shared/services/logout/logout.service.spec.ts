@@ -1,4 +1,4 @@
-import { LogoutService } from './logout.service';
+import {LogoutService} from "./logout.service";
 
 describe('LogoutService', () => {
 

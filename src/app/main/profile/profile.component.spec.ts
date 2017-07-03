@@ -1,13 +1,13 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from "@angular/core/testing";
 
-import { ProfileComponent } from './profile.component';
+import {ProfileComponent} from "./profile.component";
 
 describe('Profile', () => {
     beforeEach(() => {
-        TestBed.configureTestingModule({ declarations: [ProfileComponent]});
+        TestBed.configureTestingModule({declarations: [ProfileComponent]});
     });
 
-    it ('should work', () => {
+    it('should work', () => {
         let fixture = TestBed.createComponent(ProfileComponent);
         expect(fixture.componentInstance instanceof ProfileComponent).toBe(true, 'should create ProfileComponent');
     });

@@ -1,4 +1,4 @@
-import { ManageTradingAccountService } from './manage-trading-account.service';
+import {ManageTradingAccountService} from "./manage-trading-account.service";
 
 describe('ManageTradingAccountService', () => {
 

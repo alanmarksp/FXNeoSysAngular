@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
     selector: 'position',
     templateUrl: './position.component.html'
 })
-export class PositionComponent { }
+export class PositionComponent {
+}

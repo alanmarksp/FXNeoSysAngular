@@ -1,4 +1,4 @@
-import { ManagePositionService } from './manage-position.service';
+import {ManagePositionService} from "./manage-position.service";
 
 describe('ManagePositionService', () => {
 

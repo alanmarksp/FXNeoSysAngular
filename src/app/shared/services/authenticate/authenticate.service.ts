@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Authentication} from "../../models/authentication.model";
 import {Headers, Http, RequestOptions} from "@angular/http";
 
-import {AppSettings} from "../../../app-settings"
+import {AppSettings} from "../../../app-settings";
 
 @Injectable()
 export class AuthenticateService {

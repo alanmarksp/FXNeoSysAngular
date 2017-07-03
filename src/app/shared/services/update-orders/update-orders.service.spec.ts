@@ -1,4 +1,4 @@
-import { UpdateOrdersService } from './update-orders.service';
+import {UpdateOrdersService} from "./update-orders.service";
 
 describe('UpdateOrdersService', () => {
 

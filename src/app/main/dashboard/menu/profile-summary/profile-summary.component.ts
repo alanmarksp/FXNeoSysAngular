@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
     selector: 'profile-summary',
     templateUrl: './profile-summary.component.html'
 })
-export class ProfileSummaryComponent { }
+export class ProfileSummaryComponent {
+}

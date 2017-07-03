@@ -1,13 +1,13 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from "@angular/core/testing";
 
-import { EditOrderComponent } from './edit-order.component';
+import {EditOrderComponent} from "./edit-order.component";
 
 describe('EditOrder', () => {
     beforeEach(() => {
-        TestBed.configureTestingModule({ declarations: [EditOrderComponent]});
+        TestBed.configureTestingModule({declarations: [EditOrderComponent]});
     });
 
-    it ('should work', () => {
+    it('should work', () => {
         let fixture = TestBed.createComponent(EditOrderComponent);
         expect(fixture.componentInstance instanceof EditOrderComponent).toBe(true, 'should create EditOrderComponent');
     });

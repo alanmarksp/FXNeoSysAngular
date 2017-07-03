@@ -1,5 +1,3 @@
-
-
 export class Authentication {
     private username: string;
     private password: string;

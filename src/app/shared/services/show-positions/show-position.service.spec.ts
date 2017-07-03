@@ -1,4 +1,4 @@
-import { ShowPositionsService } from './show-position.service';
+import {ShowPositionsService} from "./show-position.service";
 
 describe('ShowPositionsService', () => {
 

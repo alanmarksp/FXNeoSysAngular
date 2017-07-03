@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
     selector: 'pending-orders',
     templateUrl: './pending-orders.component.html'
 })
-export class PendingOrdersComponent { }
+export class PendingOrdersComponent {
+}

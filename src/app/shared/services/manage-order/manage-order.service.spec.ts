@@ -1,4 +1,4 @@
-import { ManageOrderService } from './manage-order.service';
+import {ManageOrderService} from "./manage-order.service";
 
 describe('ManageOrderService', () => {
 

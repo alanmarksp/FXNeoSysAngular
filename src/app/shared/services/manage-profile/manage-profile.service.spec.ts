@@ -1,4 +1,4 @@
-import { ManageProfileService } from './manage-profile.service';
+import {ManageProfileService} from "./manage-profile.service";
 
 describe('ManageProfileService', () => {
 

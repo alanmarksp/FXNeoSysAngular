@@ -1,4 +1,4 @@
-import { PlaceOrderService } from './place-order.service';
+import {PlaceOrderService} from "./place-order.service";
 
 describe('PlaceOrderService', () => {
 

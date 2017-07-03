@@ -1,3 +1,2 @@
-
-
-export class Quote { }
+export class Quote {
+}

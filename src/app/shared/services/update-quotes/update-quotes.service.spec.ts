@@ -1,4 +1,4 @@
-import { UpdateQuotesService } from './update-quotes.service';
+import {UpdateQuotesService} from "./update-quotes.service";
 
 describe('UpdateQuotesService', () => {
 
