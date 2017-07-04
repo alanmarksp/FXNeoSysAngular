@@ -1,8 +1,8 @@
 import {TestBed} from "@angular/core/testing";
 
 import {RegisterComponent} from "./register.component";
-import {MyMaterialModule} from "../../material.module";
-import {AuthenticateService} from "../../shared/services/authenticate/authenticate.service";
+import {MyMaterialModule} from "../../../material.module";
+import {AuthenticateService} from "../../../services/authenticate/authenticate.service";
 import {HttpModule} from "@angular/http";
 import {RouterTestingModule} from "@angular/router/testing";
 

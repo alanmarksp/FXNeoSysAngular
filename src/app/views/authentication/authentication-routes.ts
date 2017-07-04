@@ -10,5 +10,10 @@ export const authenticationRoutes: Routes = [
     {
         path: 'register',
         component: RegisterComponent,
+    },
+    {
+        path: '**',
+        redirectTo: '/authentication/login',
+        pathMatch: 'full'
     }
 ];
