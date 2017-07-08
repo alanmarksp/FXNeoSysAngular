@@ -12,8 +12,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpModule} from "@angular/http";
 import {AppRoutingModule} from "./app-routing.module";
 
-import "@angular/material/prebuilt-themes/indigo-pink.css";
-
 @NgModule({
     imports: [
         BrowserAnimationsModule,

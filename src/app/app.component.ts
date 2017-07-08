@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 
+import "../assets/scss/styles.scss";
 import "../assets/css/styles.css";
 
 @Component({
