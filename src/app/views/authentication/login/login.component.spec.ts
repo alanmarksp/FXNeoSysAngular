@@ -43,7 +43,7 @@ describe('Login', () => {
         expect(spy).toHaveBeenCalled();
     }));
 
-    it('should call LoginComponent.loginFailure with invalid username', fakeAsync(() => {
+    it('should call LoginComponent.loginFailure because of invalid username', fakeAsync(() => {
         let fixture = TestBed.createComponent(LoginComponent);
         const loginComponent = fixture.componentInstance;
         const spy = spyOn(loginComponent, 'loginFailure');
@@ -52,7 +52,16 @@ describe('Login', () => {
         expect(spy).toHaveBeenCalled();
     }));
 
-    it('should call LoginComponent.loginFailure with invalid password', fakeAsync(() => {
+    it('should call LoginComponent.showSnackBar because of invalid username', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        loginComponent.login(invalidTraderUsername, traderPassword);
+        tick();
+        expect(spy).toHaveBeenCalledWith('Incorrect username or password');
+    }));
+
+    it('should call LoginComponent.loginFailure because of invalid password', fakeAsync(() => {
         let fixture = TestBed.createComponent(LoginComponent);
         const loginComponent = fixture.componentInstance;
         const spy = spyOn(loginComponent, 'loginFailure');
@@ -61,13 +70,58 @@ describe('Login', () => {
         expect(spy).toHaveBeenCalled();
     }));
 
-    it('should call LoginComponent.loginFailure with invalid username and password', fakeAsync(() => {
+    it('should call LoginComponent.showSnackBar because of invalid password', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        loginComponent.login(traderUsername, invalidTraderPassword);
+        tick();
+        expect(spy).toHaveBeenCalledWith('Incorrect username or password');
+    }));
+
+    it('should call LoginComponent.loginFailure because of invalid username and password', fakeAsync(() => {
         let fixture = TestBed.createComponent(LoginComponent);
         const loginComponent = fixture.componentInstance;
         const spy = spyOn(loginComponent, 'loginFailure');
         loginComponent.login(invalidTraderUsername, invalidTraderPassword);
         tick();
         expect(spy).toHaveBeenCalled();
+    }));
+
+    it('should call LoginComponent.showSnackBar because of invalid username and password', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        loginComponent.login(invalidTraderUsername, invalidTraderPassword);
+        tick();
+        expect(spy).toHaveBeenCalledWith('Incorrect username or password');
+    }));
+
+    it('should call LoginComponent.showSnackBar because of empty username', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        loginComponent.login('', traderPassword);
+        tick();
+        expect(spy).toHaveBeenCalledWith('You must fill all fields');
+    }));
+
+    it('should call LoginComponent.showSnackBar because of empty username', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        loginComponent.login(traderUsername, '');
+        tick();
+        expect(spy).toHaveBeenCalledWith('You must fill all fields');
+    }));
+
+    it('should call LoginComponent.showSnackBar because of empty username and password', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        loginComponent.login('', '');
+        tick();
+        expect(spy).toHaveBeenCalledWith('You must fill all fields');
     }));
 
     it('should call LoginComponent.login when button is clicked', fakeAsync(() => {
@@ -91,7 +145,7 @@ describe('Login', () => {
         loginUsernameInputElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         loginPasswordInputElement.value = traderPassword;
-        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         loginButton.triggerEventHandler('click', null);
         tick();
@@ -109,11 +163,29 @@ describe('Login', () => {
         loginUsernameInputElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         loginPasswordInputElement.value = traderPassword;
-        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         loginButton.triggerEventHandler('click', null);
         tick();
         expect(spy).toHaveBeenCalled();
+    }));
+
+    it('should call LoginComponent.showSnackBar when button is clicked and username is invalid', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        const loginUsernameInputElement = fixture.debugElement.query(By.css('#login_username')).nativeElement;
+        const loginPasswordInputElement = fixture.debugElement.query(By.css('#login_password')).nativeElement;
+        loginUsernameInputElement.value = invalidTraderUsername;
+        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginPasswordInputElement.value = traderPassword;
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalledWith('Incorrect username or password');
     }));
 
     it('should call LoginComponent.loginFailure when button is clicked and password is invalid', fakeAsync(() => {
@@ -127,10 +199,102 @@ describe('Login', () => {
         loginUsernameInputElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         loginPasswordInputElement.value = invalidTraderPassword;
-        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         loginButton.triggerEventHandler('click', null);
         tick();
         expect(spy).toHaveBeenCalled();
+    }));
+
+    it('should call LoginComponent.showSnackBar when button is clicked and password is invalid', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        const loginUsernameInputElement = fixture.debugElement.query(By.css('#login_username')).nativeElement;
+        const loginPasswordInputElement = fixture.debugElement.query(By.css('#login_password')).nativeElement;
+        loginUsernameInputElement.value = traderUsername;
+        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginPasswordInputElement.value = invalidTraderPassword;
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalledWith('Incorrect username or password');
+    }));
+
+    it('should call LoginComponent.loginFailure when button is clicked and username and password are invalid', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'loginFailure');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        const loginUsernameInputElement = fixture.debugElement.query(By.css('#login_username')).nativeElement;
+        const loginPasswordInputElement = fixture.debugElement.query(By.css('#login_password')).nativeElement;
+        loginUsernameInputElement.value = invalidTraderUsername;
+        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginPasswordInputElement.value = invalidTraderPassword;
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalled();
+    }));
+
+    it('should call LoginComponent.showSnackBar when button is clicked and username and password are invalid', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        const loginUsernameInputElement = fixture.debugElement.query(By.css('#login_username')).nativeElement;
+        const loginPasswordInputElement = fixture.debugElement.query(By.css('#login_password')).nativeElement;
+        loginUsernameInputElement.value = invalidTraderUsername;
+        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginPasswordInputElement.value = invalidTraderPassword;
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalledWith('Incorrect username or password');
+    }));
+
+    it('should call LoginComponent.showSnackBar when button is clicked and username is not filled', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        const loginPasswordInputElement = fixture.debugElement.query(By.css('#login_password')).nativeElement;
+        loginPasswordInputElement.value = traderPassword;
+        loginPasswordInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalledWith('You must fill all fields');
+    }));
+
+    it('should call LoginComponent.showSnackBar when button is clicked and password is not filled', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        const loginUsernameInputElement = fixture.debugElement.query(By.css('#login_username')).nativeElement;
+        loginUsernameInputElement.value = invalidTraderUsername;
+        loginUsernameInputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalledWith('You must fill all fields');
+    }));
+
+    it('should call LoginComponent.showSnackBar when button is clicked and username and password are not filled', fakeAsync(() => {
+        let fixture = TestBed.createComponent(LoginComponent);
+        const loginComponent = fixture.componentInstance;
+        const spy = spyOn(loginComponent, 'showSnackBar');
+        const loginButton = fixture.debugElement.query(By.css('button'));
+        loginButton.triggerEventHandler('click', null);
+        tick();
+        expect(spy).toHaveBeenCalledWith('You must fill all fields');
     }));
 });

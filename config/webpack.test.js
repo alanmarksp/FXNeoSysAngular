@@ -29,7 +29,7 @@ module.exports = {
                 loader: 'null-loader'
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 exclude: helpers.root('src', 'app'),
                 loader: 'null-loader'
             },
