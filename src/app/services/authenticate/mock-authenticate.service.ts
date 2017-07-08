@@ -3,13 +3,13 @@ import {Response, ResponseOptions} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 
 export class MockAuthenticateService {
-    private trader_username: string = 'trader';
-    private trader_password: string = 'trader_password';
+    private traderUsername: string = 'trader';
+    private traderPassword: string = 'trader_password';
 
     public login(authentication: Authentication): Observable<Response> {
         return new Observable<Response>((subscriber: any) => {
-            if (authentication.getUsername() == this.trader_username &&
-                authentication.getPassword() == this.trader_password) {
+            if (authentication['username'] == this.traderUsername &&
+                authentication['password'] == this.traderPassword) {
                 subscriber.next(new Response(
                     new ResponseOptions({
                         body: [
