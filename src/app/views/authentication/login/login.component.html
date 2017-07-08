@@ -1,0 +1,22 @@
+<div class="aligner">
+    <md-card class="form-center text-center">
+        <md-card-title>
+            Login
+        </md-card-title>
+        <div class="row">
+            <md-input-container class="full-width" color='accent'>
+                <input #username id="login_username_input" mdInput placeholder="Username" required="required" minlength="8">
+            </md-input-container>
+        </div>
+        <div class="row">
+            <md-input-container class="full-width" color='accent'>
+                <input #password id="login_password_input" mdInput placeholder="Password" type="password" required="required"
+                       minlength="8">
+            </md-input-container>
+        </div>
+        <div class="row">
+            <button md-raised-button id="login_button" class="mat-accent" (click)="login(username.value, password.value)">LOGIN</button>
+        </div>
+        <div class="row">Not a member? <a [routerLink]="['../register']">Register</a></div>
+    </md-card>
+</div>

@@ -15,8 +15,8 @@ module.exports = {
                 loaders: [
                     {
                         loader: 'awesome-typescript-loader',
-                        options: { configFileName: helpers.root('src', 'tsconfig.json') }
-                    } , 'angular2-template-loader'
+                        options: {configFileName: helpers.root('src', 'tsconfig.json')}
+                    }, 'angular2-template-loader'
                 ]
             },
             {
@@ -29,12 +29,12 @@ module.exports = {
                 loader: 'null-loader'
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: 'null-loader'
+                loader: 'style-loader!css-loader!sass-loader?sourceMap'
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 include: helpers.root('src', 'app'),
                 loader: 'raw-loader'
             }
