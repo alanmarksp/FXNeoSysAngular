@@ -29,15 +29,21 @@ export class MockAuthenticateService {
 
     public register(authentication: Authentication): Observable<Response> {
         return new Observable<Response>((subscriber: any) => {
-            subscriber.next(new Response(
-                new ResponseOptions({
-                    body: [
-                        {
-                            token: 'test_token'
-                        }
-                    ]
-                }))
-            )
+            if (authentication['username'] != this.traderUsername) {
+                subscriber.next(new Response(
+                    new ResponseOptions({
+                        body: [
+                            {
+                                token: 'test_token'
+                            }
+                        ]
+                    }))
+                )
+            }
+            else {
+                subscriber.error()
+            }
+            subscriber.complete();
         });
     }
 }

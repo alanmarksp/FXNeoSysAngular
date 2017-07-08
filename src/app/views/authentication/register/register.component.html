@@ -5,21 +5,22 @@
         </md-card-title>
         <div class="row">
             <md-input-container class="full-width" color="accent">
-                <input #username mdInput placeholder="Username">
+                <input #username id="register_username_input" mdInput placeholder="Username">
             </md-input-container>
         </div>
         <div class="row">
             <md-input-container class="full-width" color="accent">
-                <input #password mdInput placeholder="Password" type="password">
+                <input #password id="register_password_input" mdInput placeholder="Password" type="password">
             </md-input-container>
         </div>
         <div class="row">
             <md-input-container class="full-width" color="accent">
-                <input #passwordConfirmation mdInput placeholder="Confirm Password" type="password">
+                <input #passwordConfirmation id="register_password_confirmation_input" mdInput
+                       placeholder="Confirm Password" type="password">
             </md-input-container>
         </div>
         <div class="row">
-            <button md-raised-button class="mat-accent"
+            <button md-raised-button id="register_button" class="mat-accent"
                     (click)="register(username.value, password.value, passwordConfirmation.value)">
                 REGISTER
             </button>

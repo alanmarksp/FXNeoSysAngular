@@ -9,6 +9,10 @@ import {MdSnackBar} from "@angular/material";
     templateUrl: './register.component.html'
 })
 export class RegisterComponent {
+    private registerEmptyFieldsMessage = 'You must fill all fields';
+    private registerDifferentPasswordsMessage = 'Password and password confirmation must be the same';
+    private registerFailureMessage = 'Username already exists';
+
     constructor(private authenticateService: AuthenticateService,
                 private router: Router,
                 private snackBar: MdSnackBar) {
@@ -26,21 +30,21 @@ export class RegisterComponent {
                     )
             }
             else {
-                this.showSnackBar('Password and password confirmation must be the same')
+                this.showSnackBar(this.registerDifferentPasswordsMessage)
             }
         }
         else {
-            this.showSnackBar('You must fill all fields')
+            this.showSnackBar(this.registerEmptyFieldsMessage)
         }
     }
 
-    registerSuccess() {
+    private registerSuccess() {
         this.router
             .navigate(['/']);
     }
 
     private registerFailure() {
-        this.showSnackBar('Username already exists')
+        this.showSnackBar(this.registerFailureMessage)
     }
 
     private showSnackBar(message: string) {

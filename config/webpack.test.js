@@ -31,10 +31,10 @@ module.exports = {
             {
                 test: /\.s?css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: 'null-loader'
+                loader: 'style-loader!css-loader!sass-loader?sourceMap'
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 include: helpers.root('src', 'app'),
                 loader: 'raw-loader'
             }
