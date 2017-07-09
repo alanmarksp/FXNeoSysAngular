@@ -1,0 +1,15 @@
+<md-sidenav-container>
+    <md-sidenav #sidenav>
+        <dashboard-menu></dashboard-menu>
+    </md-sidenav>
+    <md-toolbar class="mat-elevation-z6" color="primary">
+        <button md-icon-button (click)="sidenav.toggle()">
+            <md-icon>menu</md-icon>
+        </button>
+        <div class="header-wrapper">
+            <span>FXNeoSys</span>
+        </div>
+    </md-toolbar>
+    <content></content>
+
+</md-sidenav-container>

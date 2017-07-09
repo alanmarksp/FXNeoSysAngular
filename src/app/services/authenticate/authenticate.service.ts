@@ -8,20 +8,20 @@ import {AppSettings} from "../../app-settings";
 export class AuthenticateService {
 
     headers = new Headers({'Content-Type': 'application/json'});
-    options = new RequestOptions({headers: this.headers});
+    options = new RequestOptions({headers: this.headers, withCredentials: true});
 
     constructor(private http: Http) {
     }
 
     public login(authentication: Authentication) {
         return this.http
-            .post(AppSettings.API_ENDPOINT + '/authenticate/login/', authentication, this.options)
+            .post(AppSettings.API_ENDPOINT + '/authentications/login/', authentication, this.options)
             .map(value => value.json())
     }
 
     public register(authentication: Authentication) {
         return this.http
-            .post(AppSettings.API_ENDPOINT + '/authenticate/register/', authentication, this.options)
+            .post(AppSettings.API_ENDPOINT + '/authentications/register/', authentication, this.options)
             .map(value => value.json())
     }
 }

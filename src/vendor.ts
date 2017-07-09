@@ -9,4 +9,4 @@ import "@angular/router";
 import "hammerjs";
 // RxJS
 import "rxjs";
-import 'rxjs/add/operator/toPromise';
+import "rxjs/add/operator/toPromise";

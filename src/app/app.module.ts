@@ -11,6 +11,18 @@ import {MyMaterialModule} from "./material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpModule} from "@angular/http";
 import {AppRoutingModule} from "./app-routing.module";
+import {DashboardComponent} from "./views/main/dashboard/dashboard.component";
+import {DashboardMenuComponent} from "./views/main/dashboard/menu/dashboard-menu.component";
+import {ProfileSummaryComponent} from "./views/main/dashboard/menu/profile-summary/profile-summary.component";
+import {TradingAccountsComponent} from "./views/main/dashboard/menu/trading-accounts/trading-accounts.component";
+import {TradingAccountSummaryComponent} from "./views/main/dashboard/menu/trading-accounts/trading-account-summary.component";
+import {ContentComponent} from "./views/main/dashboard/content/content.component";
+import {TradingAccountComponent} from "./views/main/dashboard/content/trading-account/trading-account.component";
+import {QuotesComponent} from "./views/main/dashboard/content/quotes/quotes.component";
+import {PositionsComponent} from "./views/main/dashboard/content/positions/positions.component";
+import {PendingOrdersComponent} from "./views/main/dashboard/content/orders/pending-orders.component";
+import {OrdersComponent} from "./views/main/dashboard/content/orders/orders.component";
+import {OrderSummaryComponent} from "./views/main/dashboard/content/orders/order-summary.component";
 
 @NgModule({
     imports: [
@@ -26,7 +38,19 @@ import {AppRoutingModule} from "./app-routing.module";
         AuthenticationComponent,
         LoginComponent,
         RegisterComponent,
-        MainComponent
+        MainComponent,
+        DashboardComponent,
+        DashboardMenuComponent,
+        ProfileSummaryComponent,
+        TradingAccountsComponent,
+        TradingAccountSummaryComponent,
+        ContentComponent,
+        TradingAccountComponent,
+        QuotesComponent,
+        PositionsComponent,
+        PendingOrdersComponent,
+        OrdersComponent,
+        OrderSummaryComponent
     ],
     bootstrap: [AppComponent]
 })
