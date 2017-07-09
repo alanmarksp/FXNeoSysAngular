@@ -1,0 +1,27 @@
+
+md-toolbar {
+    position: absolute;
+    z-index: 10;
+}
+
+md-sidenav-container {
+    width: 100%;
+    height: 100%;
+}
+
+md-sidenav {
+    width: 240px;
+}
+
+.header-wrapper {
+    height: 64px;
+    left: 72px;
+    position: absolute;
+    line-height: 64px;
+}
+
+.example-sidenav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

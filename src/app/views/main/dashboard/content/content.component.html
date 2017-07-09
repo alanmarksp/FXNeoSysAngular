@@ -1,0 +1,17 @@
+<div class="content-container">
+    <div fxLayout.lt-md="column">
+        <div fxLayout="column" fxLayout.sm="row" fxFlex="1 1 30%" fxFlex.lt-md="0 0 auto">
+            <quotes fxFlex="1 1 50%"></quotes>
+            <trading-account fxFlex="1 1 50%"></trading-account>
+        </div>
+        <div fxLayout="column" fxFlex="1 1 auto" fxFlex.lt-md="0 0 auto">
+            <div fxLayout="row">
+                <positions></positions>
+            </div>
+            <div fxLayout="column" fxLayout.sm="row" fxLayout.gt-sm="row">
+                <pending-orders></pending-orders>
+                <orders></orders>
+            </div>
+        </div>
+    </div>
+</div>

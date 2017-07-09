@@ -1,0 +1,19 @@
+<md-card fxFlex>
+    <md-card-title>
+        Account
+    </md-card-title>
+    <md-list *ngIf="tradingAccount">
+        <md-list-item>
+            <h4 md-line>{{tradingAccount.getId()}}</h4>
+            <p md-line> ID </p>
+        </md-list-item>
+        <md-list-item>
+            <h4 md-line>{{tradingAccount.getFunds()}}</h4>
+            <p md-line> Funds </p>
+        </md-list-item>
+        <md-list-item>
+            <h4 md-line>{{tradingAccount.getRealizaedProfit()}}</h4>
+            <p md-line> Realized Profit </p>
+        </md-list-item>
+    </md-list>
+</md-card>

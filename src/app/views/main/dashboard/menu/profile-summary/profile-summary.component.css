@@ -1,0 +1,34 @@
+.profile-summary-container {
+    width: 100%;
+    padding: 16px 16px 0 16px;
+    box-sizing: border-box;
+}
+
+.profile-summary-circle-row {
+    height: 64px;
+}
+
+.profile-summary-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.profile-summary-subtitle {
+    height: 56px;
+    line-height: 22px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.profile-summary-subtitle-line {
+    padding: 2px;
+}
+
+.profile-summary-subtitle-username {
+    font-weight: bold;
+}
+
+.md-nav-list {
+    padding-top: 0;
+}

@@ -18,6 +18,24 @@ $fxns-app-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $fxns-app-theme: mat-light-theme($fxns-app-primary, $fxns-app-accent, $fxns-app-warn);
 
+.color-primary {
+  color: mat-color($fxns-app-primary);
+}
+
+.color-accent {
+  color: mat-color($fxns-app-accent);
+}
+
+.background-color-primary {
+  background-color: mat-color($fxns-app-primary);
+  color: #FFFFFF;
+}
+
+.background-color-accent {
+  background-color: mat-color($fxns-app-accent);
+  color: #FFFFFF;
+}
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.

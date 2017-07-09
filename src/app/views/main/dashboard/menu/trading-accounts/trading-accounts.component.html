@@ -1,0 +1,4 @@
+<md-list-item *ngIf="!tradingAccounts">
+    <span md-line>You don't have Accounts</span>
+</md-list-item>
+<trading-account-summary  *ngFor="let tradingAccount of tradingAccounts" [tradingAccount]="tradingAccount"></trading-account-summary>
